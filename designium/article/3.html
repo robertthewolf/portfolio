@@ -1,0 +1,33 @@
+<h1>How to: Custom Text Highlighter</h1>
+	<p>Designing a website is about focusing on details. With CSS3, it is now possible to customize the user's highlighter tool. In this brief article, you will learn how to do it!</p>
+	<section>
+		<h1>Create ::selection in CSS</h1>
+		<p>The whole trick lies in the new CSS3 slectors. By using the ::selection, we can define styling only for content, that the user's highlights with the cursor. </p>
+		<code>::selection {
+	css declarations;
+}</code>
+	</section>
+	<section>
+	<h1>Write your custom style</h1>
+		<p>Now, we can start to implement our own styling. Start by using the <em>background-color</em> tag to change the highlighter color. To create an inverse effect, you can play around with the <em>color</em> tag as well.</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="MEVLKo" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: ::selection" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/MEVLKo/">CSS Selectors: ::selection</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	</section>
+	<section>
+	<h1>Provide compatibility with vendor prefixes</h1>
+		<p>The :selection CSS pseudo-element is now supported by 76.95% browsers. However, to provide compatibility with Firefox, we need to include -moz- vendor prefix:</p>
+		<code>::-moz-selection {
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}</code>
+	</section>
+	
+	
+<aside>
+	<a href="#1">The Ultimate Guide to CSS Selectors</a>
+	</aside>

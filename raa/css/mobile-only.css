@@ -1,0 +1,121 @@
+.logo {
+	margin: -.5em;
+	padding: 1em;
+	background-color: white;
+	width: 12rem;
+	height: calc(12rem * 1.1);
+	max-width: calc(50vw - 1.5em);
+	max-height: calc((50vw - 1.5em) * 1.1);
+	align-self: flex-end;
+}
+
+.cover {
+	width: calc(100% - 14rem);
+	font-size: 1.8rem;
+}
+
+@media screen and (max-width: 28em) {
+	.cover {
+		width: calc(50% - 1rem);
+		font-size: 1.2rem;
+	}
+}
+
+.infobox {
+	background-color: white;
+	justify-content: flex-start;
+	margin: 0;
+	text-align: left;
+}
+
+.socials {
+	justify-content: space-around;
+	align-items: center;
+	padding-left: .5em;
+}
+
+nav a:nth-of-type(even),
+#products>header,
+#visitus>header {
+	flex-direction: row-reverse;
+}
+
+nav a div,
+article header h1,
+article section figure img {
+	/*calculate*/
+	width: calc(50vw - 1.5em);
+	height: calc(50vw - 1.5em);
+	max-width: 12rem;
+	max-height: 12rem;
+}
+
+nav a img,
+article header img {
+	width: calc(50vw - 1.5em);
+	height: calc(50vw - 1.5em);
+	max-height: 12rem;
+}
+
+article header {
+	display: flex;
+	width: 100%;
+}
+
+
+/*why and how */
+
+figure {
+	width: calc(50% - 1em);
+}
+
+.values {
+	justify-content: space-around;
+}
+
+.values figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/*products page*/
+
+#products>p {
+	text-align: right;
+	margin-left: auto;
+}
+
+#products figcaption,
+.values figcaption {
+	width: calc(50vw - 1.5em);
+	max-width: 12rem;
+}
+
+
+/* our journey page */
+
+.staff {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.staff figure {
+	margin: 2em auto;
+}
+
+
+/* visit us */
+
+.map {
+	width: calc(100% - 1em);
+}
+
+@media screen and (min-width: 430px) { /* where and when next to each other */
+	#visitus section:first-of-type {
+		width: 50%;
+		float: right;
+	}
+}

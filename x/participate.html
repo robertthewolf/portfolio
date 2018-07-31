@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Creative district of Aarhus K. A place for Community, Kreativity, and Culture.">
+	<meta name="author" content="Robert Wolf, Sheereen Zangana, Desireé Zambelli, Kasia Zielińska, Stefani M. Yotova, Tereza Troxy Vajsová">
+	<link rel="icon" type="image/png" href="img/icon.png">
+	<title>Aarhus K - Participate</title>
+
+	<!-- Reset css -->
+	<link href="css/reset.css" rel="stylesheet">
+
+	<!-- Custom styles -->
+	<link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="index.html">Aarhus K</a>
+			<a href="story.html">The Story</a>
+			<a href="projects.html">The Projects</a>
+			<a href="get-in-touch.html">Get In Touch</a>
+		</nav>
+	</header>
+
+	<main class="participate">
+
+		<article>
+			<div class="slide">
+
+				<h1>Participate</h1>
+
+				<a id="next"></a>
+			</div>
+			<div class="slide">
+				<p class="small">Institut for (X) is a culture and business platform for young designers, musicians, artists, entrepreneurs and craftsmen located in Aarhus K.</p>
+				<p class="small">It’s an independent and not-for-profit culture association arising from citizen initiatives.</p>
+				<p class="small">There are currently around 90 projects, 50 businesses and 35 associations.
+				</p>
+			</div>
+
+
+			<div class="slide">
+
+				<p class="small">Do you have an idea you would like to implement in Aarhus K? Institut for (X) coordinates the creative urban experiments which take place here.</p>
+				<p class="small">From viking martial arts practitioners to designers, jazz musicians to beer brewers - your interest can help to make Aarhus a better city. </p>
+			</div>
+			<div class="slide">
+				<p class="small">If you have a project you feel will make Aarhus K a vibrant, exciting and fun place to be, come on over.</p>
+				<p>We'd love to hear from you!</p>
+				
+			<a href="http://institutforx.dk/contact/" target="_blank" rel="external">Contact Informations</a>
+			</div>
+
+
+		</article>
+
+	</main>
+
+
+	 <footer>
+    <a href="http://institutforx.dk/" title="Institut for (X)" target="_blank" rel="external"><img src="img/footer/institut-for-x-logo.png" alt="Institut for (X)"></a>
+    <a href="http://godsbanen.dk/" title="Godsbanen" target="_blank" rel="external"><img src="img/footer/godsbanen.png" alt="Godsbanen"></a>
+    <a href="http://www.aarhus.dk/kilen" title="Aarhus Kommune" target="_blank" rel="external"><img src="img/footer/aarhus-kommune.png" alt="Aarhus Kommune"></a>
+    <a href="http://www.aarhus2017.dk/en/" title="Aarhus 2017 European Capital of Culture" target="_blank" rel="external"><img src="img/footer/rethink2017.png" alt="Aarhus 2017 European Capital of Culture"></a>
+</footer>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Custom js -->
+	<script>
+		$(document).ready(function() {
+
+			//next button
+
+			$('#next').click(function() {
+				$('html, body').animate({
+					scrollTop: $('.slide:nth-of-type(2)').offset().top * 1.1
+				}, 1000);
+			});
+
+
+		});
+
+	</script>
+
+</body>
+
+</html>

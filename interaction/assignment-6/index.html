@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image test</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<article>
+		<h1>Workshop:<br>Images in relation to Page Load Time</h1>
+		<section>
+			<h1>Working with images</h1>
+			<figure>
+				<img src="img/uncompressed.jpg" alt="uncompressed">
+				<figcaption>Uncompresed<br>700 × 516 pixels — 214.88 KB<br>6.50 s</figcaption>
+			</figure>
+
+			<figure>
+				<img src="img/compressed.jpg" alt="compressed">
+				<figcaption>Compresed<br>700 × 516 pixels — 34.89 KB<br>2.69 s</figcaption>
+			</figure>
+
+			<figure>
+				<img src="img/webp.webp" alt="webp">
+				<figcaption>WebP<br>700 × 516 pixels — 13.17 KB<br>2.28 s</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h1>Fallback strategy for WebP-format in unsupported browsers</h1>
+			<picture>
+
+				<source srcset="img/webp.webp" type="image/webp">
+				<source srcset="img/compressed.jpg" type="image/jpeg">
+				<img src="img/compressed.jpg" alt="compressed">
+
+			</picture>
+		</section>
+		<section>
+			<h1>Working with RWD - Different background images</h1>
+			<figure class="background">
+			</figure>
+		</section>
+
+		<section>
+			<h1>Working with RWD - Different foreground images</h1>
+			<picture>
+
+				<source srcset="img/compressed_small.jpg" type="image/jpeg" media="(max-width: 400px),(max-height: 400px)">
+				<source srcset="img/compressed.jpg" type="image/jpeg">
+				<img src="img/compressed.jpg" alt="compressed">
+
+			</picture>
+		</section>
+		
+		<section>
+			<h1>Test your assignment</h1>
+			<p>6 requests<br>275KB transferred<br>DOMContentLoaded: 119ms<br>Load: 9.39s</p>
+		</section>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<h1>The Ultimate Guide to CSS Selectors</h1>
+	<p>Selectors are the core of CSS, and writing a good CSS requires using them right. In this article, you will learn the essentials to make your styling clean and effective.</p>
+	<section>
+		<h1>.class</h1>
+		<p>Selects all elements, where the <em>class</em> atribute equals <em>your value</em></p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="GMxXpB" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: .class" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/GMxXpB/">CSS Selectors: .class</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+		<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Probably the most popular CSS selector, because you can select multiple elements with the same class. However, to keep the html cleaner, use it only if no other selectors are available.</small>
+	</section>
+	<section>
+		<h1>#id</h1>
+		<p>Selects element with <em>id</em> attribute equals <em>your value</em></p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="XeEPRN" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: #id" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/XeEPRN/">CSS Selectors: #id</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+		<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Unlike the .class selector, only one element can have the same attribute in whole site. Use it only if the id attribute already exists for different purpose (e.g. anchor links, JavaScript functionality).</small>
+	</section>
+	<section>
+		<h1>*</h1>
+		<p>Selects all elements</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="rGrJGj" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: *" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/rGrJGj/">CSS Selectors: *</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Great with combination with other selectors, such as <a href="#elel">element element</a> or <a href="#elinel">element>element</a></small>
+	</section>
+	<section>
+		<h1>element</h1>
+		<p>Selects all elements of the relevant type</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="EwpQQv" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: element" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/EwpQQv/">CSS Selectors: element</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Great for creating a general styles of the website, use it as much as possible.</small>
+	</section>
+	<section id="elel">
+		<h1>element1 element2</h1>
+		<p>Selects all element2 inside element1</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="wrxyYv" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: element element" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/wrxyYv/">CSS Selectors: element element</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Useful for separate styling for different page sections. The element1 then selects an area, where the element2 styling will be applied.</small>
+	</section>
+	<section id="elinel">
+		<h1>element1>element2</h1>
+		<p>	Selects all element2 where the parent is a element1</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="veadPb" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: element>element" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/veadPb/">CSS Selectors: element>element</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Great for creating a general styles of the website, use it as much as possible.</small>
+	</section>
+	<section>
+		<h1>selector, selector</h1>
+		<p>Combines two selectors together</p>
+		<p data-height="300" data-theme-id="31538" data-slug-hash="QqBmLK" data-default-tab="html,result" data-user="wolfrob35" data-embed-version="2" data-pen-title="CSS Selectors: selector, selector" class="codepen">See the Pen <a href="https://codepen.io/wolfrob35/pen/QqBmLK/">CSS Selectors: selector, selector</a> by Robert Wolf (<a href="https://codepen.io/wolfrob35">@wolfrob35</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<small>Perfect to make you CSS shorter and clearer. It is mostly used for reseting default browser styling.</small>
+	</section>
+	<p>There are the basic CSS3 selectors, used daily. To see the complete list, visit <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS3 selectors reference on W3C</a></p>
+<aside>
+	<a href="#3">How to: Custom Text Highlighter</a>
+	</aside>

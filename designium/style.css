@@ -1,0 +1,587 @@
+/* Robert Wolf's CSS Reset */
+
+*:not(title) {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	outline: 0;
+	display: block;
+}
+
+
+/* fonts */
+
+@font-face {
+	font-family: 'sofia';
+	src: url('fonts/sofia_light.ttf') format('truetype');
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: 'sofia';
+	src: url('fonts/sofia_medium.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'sofia';
+	src: url('fonts/sofia_800.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'sofia';
+	src: url('fonts/sofia_black.ttf') format('truetype');
+	font-weight: 800;
+}
+
+
+/* general styling */
+
+html {
+	color: #252323;
+}
+
+body {
+	font-family: 'sofia', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	background-color: #EBEBEB;
+}
+
+a {
+	color: #252323;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F02A39;
+}
+
+p {
+	padding: 1rem 0;
+	font-weight: 200;
+	line-height: 1.5em;
+}
+
+::selection {
+	color: #EBEBEB;
+	background: #252323;
+}
+
+small {
+	padding: 1rem 0;
+	font-size: .8rem;
+	font-weight: 200;
+	line-height: 1.5em;
+}
+
+code {
+	font-size: 13px;
+	font-family: "Source Code Pro", Menlo, Consolas, Monaco, monospace;
+	background: #292A2B;
+	padding: 15px;
+	white-space: pre-wrap;
+	line-height: 1.35;
+	-moz-tab-size: 2;
+	tab-size: 2;
+	color: white;
+}
+
+blockquote {
+	position: relative;
+	max-width: 400px;
+	margin: 2em 0;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+blockquote::before {
+	content: open-quote;
+	top: 0px;
+	font-style: normal;
+	font-size: 320%;
+	line-height: .8em;
+	font-weight: 800;
+	background-color: #BEF1EC;
+	float: left;
+	padding: 0 .25rem .5rem;
+	margin-right: .1em;
+}
+
+
+/* layout styling */
+
+header,
+footer {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 10;
+	align-items: center;
+}
+
+header {
+	background-color: #EBEBEB;
+	justify-content: center;
+}
+
+header h1,
+footer h1 {
+	font-weight: 600;
+	position: relative;
+	line-height: 1em;
+}
+
+header h1 {
+	color: #F02A39;
+	margin: auto;
+	font-size: 3em;
+	animation: shakeheader 2s infinite;
+}
+
+header h1::after,
+footer h1::after {
+	content: '';
+	background-image: url(https://img.buzzfeed.com/buzzfeed-static/static/2016-01/7/11/enhanced/webdr03/enhanced-buzz-32618-1452185446-0.jpg);
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	left: 1.8%;
+	top: 22%;
+}
+
+.safari header h1::after,
+.safari footer h1::after,
+.safari-mobile header h1::after,
+.safari-mobile footer h1::after {
+	top: 31%;
+	border-width: .24em !important;
+}
+
+@keyframes shakeheader {
+	0% {
+		text-shadow: .05em -.05em rgb(255, 157, 84), .1em -.05em rgb(255, 195, 84);
+	}
+	5% {
+		text-shadow: -.05em .05em rgb(255, 157, 84), -.1em .05em rgb(255, 195, 84);
+	}
+	12% {
+		text-shadow: .05em 0 rgb(255, 157, 84), .1em 0 rgb(255, 195, 84);
+	}
+}
+
+header h1::after {
+	border: .26em solid #F02A39;
+}
+
+header a {
+	color: black;
+	text-transform: uppercase;
+	font-weight: 200;
+	margin-bottom: 1rem;
+	transition: color .5s;
+}
+
+
+/* navigation */
+
+nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 5;
+}
+
+nav>a {
+	padding: 1rem;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 200;
+	transition: color .5s;
+}
+
+nav>a:hover {
+	color: #F02A39;
+}
+
+#progress {
+	height: 2px;
+	width: 100%;
+	margin: calc(1em - 1px);
+	/* margin-right: auto; */
+	background-origin: content-box;
+	display: none;
+	overflow: hidden;
+}
+
+#progress span {
+	height: 100%;
+	background-color: #252323;
+}
+
+nav img {
+	height: 32px;
+}
+
+.bar {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: #BEF1EC;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	width: calc(100% - 3em);
+	transition: all .5s;
+	line-height: 1rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	text-align: right;
+}
+
+.bar ul {
+	width: 100%;
+}
+
+.bar li {
+	font-weight: 600;
+}
+
+.bar li.hidden {
+	height: 0;
+	visibility: hidden;
+}
+
+.bar li.spaced {
+	height: auto;
+	visibility: visible;
+	padding: 1em 0;
+}
+
+.bar li:hover a {
+	text-decoration: line-through;
+	color: #252323;
+}
+
+#number {
+	padding: .5rem;
+	padding-right: 1rem;
+	border-right: 1px solid rgba(37, 35, 35, .3);
+	margin-right: 1rem;
+	font-weight: 800;
+	width: 20px;
+	display: none;
+}
+
+#toggle {
+	padding: .5rem;
+	height: 1em;
+	width: 1em;
+	position: relative;
+	padding-left: 1rem;
+	border-left: 1px solid rgba(37, 35, 35, .3);
+	margin-left: 1rem;
+}
+
+#toggle div {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+}
+
+#toggle span {
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: #252323;
+	transition: transform .2s;
+}
+
+#toggle span:first-of-type {
+	top: 20%;
+}
+
+#toggle span:last-of-type {
+	bottom: 20%;
+}
+
+#toggle.open span:first-of-type,
+.read #toggle span:first-of-type {
+	top: 50%;
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+#toggle.open span:last-of-type,
+.read #toggle span:last-of-type {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* main */
+
+article {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-color: #252323;
+	transition: opacity 1s;
+}
+
+article>span {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	opacity: .5;
+}
+
+.safari-mobile article>span {
+	background-attachment: scroll;
+}
+
+
+/* article */
+
+article>div {
+	background-color: #EBEBEB;
+	opacity: 0;
+	transition: opacity 2s;
+	padding: 2em .5em;
+}
+
+article h1,
+article section,
+article p,
+article small {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+article h1 {
+	font-size: 2em;
+	padding: 5rem 0 1rem;
+	text-align: center;
+	font-weight: 600;
+}
+
+article div>h1+p::first-letter {
+	font-size: 320%;
+	line-height: .8em;
+	font-weight: 800;
+	display: block;
+	float: left;
+	padding: 0 .25rem .5rem;
+	margin-right: .1em;
+	background-color: #BEF1EC;
+}
+
+article section {
+	padding: 5em 0;
+}
+
+article img,
+article video {
+	width: 100%;
+	padding: .5em 0;
+}
+
+article section h1 {
+	font-size: 1rem;
+	padding: .5rem;
+	background-color: #252323;
+	color: white;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+article em {
+	display: inline;
+	font-weight: 800;
+}
+
+article a {
+	display: inline;
+}
+
+article a:hover img,
+article a:hover video {
+	filter: brightness(50%);
+	transition: all 1s;
+}
+
+
+/* aside */
+
+aside {
+	max-width: 700px;
+	margin: 1rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+aside::before {
+	content: 'related content';
+	font-weight: 200;
+	text-transform: uppercase;
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 1em;
+}
+
+aside a {
+	display: inline;
+	color: rgb(255, 195, 84);
+	transition: color .5s;
+	background-color: #252323;
+	padding: 1em;
+	margin: .5em;
+}
+
+aside a:hover {
+	color: #F02A39;
+}
+
+
+/* modal */
+
+.read article>span {
+	height: 50vh;
+	opacity: 1;
+}
+
+.read article>div {
+	opacity: 1;
+}
+
+.read header,
+.read article {
+	display: none;
+}
+
+.read article.load {
+	display: block;
+	height: auto;
+}
+
+.read nav {
+	position: absolute;
+}
+
+.read .bar {
+	top: 0;
+	transform: translateX(-50%);
+}
+
+.read .bar>div {
+	border: none !important;
+}
+
+.read .bar #progress {
+	display: block;
+}
+
+.read .bar ul {
+	display: none;
+}
+
+
+/* footer */
+
+footer {
+	height: 100vh;
+	position: relative;
+	z-index: 10;
+	background-color: #252323;
+	color: #EBEBEB;
+	justify-content: center;
+}
+
+footer h1 {
+	color: rgb(255, 195, 84);
+	font-size: 3em;
+	animation: shakefooter 2s infinite;
+}
+
+@keyframes shakefooter {
+	0% {
+		text-shadow: .05em -.05em rgb(255, 157, 84), .1em -.05em #F02A39;
+	}
+	5% {
+		text-shadow: -.05em .05em rgb(255, 157, 84), -.1em .05em #F02A39;
+	}
+	12% {
+		text-shadow: .05em 0 rgb(255, 157, 84), .1em 0 #F02A39;
+	}
+}
+
+footer h1::after {
+	border: .25em solid rgb(255, 195, 84);
+}
+
+footer h2 {
+	padding: 1rem;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+footer p {
+	padding: 2rem 1rem;
+	max-width: 460px;
+	text-align: center;
+}
+
+footer a {
+	display: inline;
+	color: rgb(255, 195, 84);
+	transition: color .5s;
+}
+
+footer a:hover {
+	color: #F02A39;
+}
+
+
+/* bigger screen optimization */
+
+@media screen and (min-width: 472px) {
+	header h1 {
+		font-size: 5rem;
+		animation: none;
+	}
+	.bar {
+		width: 430px;
+		white-space: nowrap;
+		text-align: center;
+	}
+	#number {
+		display: block;
+	}
+	blockquote::before {
+		content: open-quote;
+		position: absolute;
+		top: 0px;
+		left: -50px;
+		font-style: normal;
+		font-size: 320%;
+		line-height: .8em;
+		font-weight: 800;
+		background-color: #BEF1EC;
+	}
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment 4</title>
+	<link href="style.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a id="all">&larr; see all</a>
+		</nav>
+		<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzUwcHgiIGhlaWdodD0iNDYuNTdweCIgdmlld0JveD0iNzUgMCAzNTAgNDYuNTciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgNzUgMCAzNTAgNDYuNTciIHhtbDpzcGFjZT0icHJlc2VydmUiPjx0aXRsZT5sb2dvLWJsYWNrPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48cGF0aCBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIiBkPSJNMzk4LjQ3OSwyOC42MzJjMCwzLjQzLTAuMTU3LDEwLjEzOS0wLjE1NywxMC4zNzRsLTAuMjMzLDAuMjNsLTYuNDc2LTQuMDUxVjE5LjI3MWMxLjAxNC0xLjU1OSwyLjQxOC0yLjM0MSwzLjY2Ni0yLjM0MWMxLjQ4MiwwLDIuNTczLDEuMDkyLDMuMTE5LDIuNTc1QzM5OC4zOTcsMjAuMTI5LDM5OC40NzksMjQuMjYzLDM5OC40NzksMjguNjMyTDM5OC40NzksMjguNjMyeiBNNDE5Ljg1MSwyMi4xNThsLTYuMDA3LDQuOTEzVjE1LjkxN0w0MTkuODUxLDIyLjE1OHogTTQwMy45MzgsMzYuMjc3Yy0wLjM5MS0zLjUwOS0wLjMxLTEzLjAyOS0wLjMxLTE3LjQ3NWMwLTIuODg2LTIuNDk4LTQuOTkyLTUuNjE5LTYuMzE5bC02LjM5Niw1LjM4MXYtMTEuN2MwLTEuOTQ4LDEuMTY5LTQuMDU4LDIuNTcyLTQuMDU4di0wLjM5Yy0zLjA0MSwwLTYuMzkzLDIuNDItNi45NCwzLjk4Yy0wLjcwMS0xLjE3Mi0yLjMzOS0xLjg3NS0zLjg5Ny0xLjg3NWwtMC4wODEsMC42MjRjMS41NjIsMCwzLjA0MiwyLjY1NSwzLjA0Miw3LjMzNmMwLDkuNDM3LTAuMDc2LDE4LjQ4OC0wLjA3NiwyMi4zODRjMCwxLjI1Mi0wLjE1NywyLjEwOS0wLjg2LDMuMTIzbDkuNTk3LDUuODQ4YzMuNjY0LTMuNDI4LDUuMDctNC40NDMsOC45NzItNi44NjFMNDAzLjkzOCwzNi4yNzd6IE00MjUuMDc5LDM0Ljc5NWwtMC40NzItMC40NzNjLTIuNDE2LDIuNDIyLTMuODI0LDMuNDM0LTUuMjI2LDMuNDM0Yy0xLjQwNiwwLTIuNzMxLTAuODU3LTUuNTM4LTMuMDQxdi02LjM5NmwxMC45OTktOC44MTRjLTIuNTc1LTIuMTg0LTcuODc4LTcuNDg5LTcuODc4LTcuNDg5Yy0yLjk2NywyLjY1NS00LjY4Miw0LjEzNi04LjgxNSw3LjAyMmMwLjE1NywwLjg1NywwLjMxMiwyLjAyNSwwLjMxMiwyLjk2M3YxMi40MDNjMCwwLjg1OS0wLjA3OCwxLjQ4Mi0wLjM5MiwyLjQ5Nmw4LjY1OCw2LjA4TDQyNS4wNzksMzQuNzk1eiBNMzIyLjUsMjkuODhjMCwyLjEwNS0wLjYyNywzLjQzLTIuMDI5LDQuNTIyYy0zLjE5OC0zLjEyMS00Ljc1Ny03LjQ4Ny00Ljc1Ny0xMS44NTdjMC02LjU0OSwyLjI2LTkuMDUsNS4zODItMTEuMzA5YzAuNDY4LTAuMzkxLDAuOTM1LTAuNzA1LDEuNDA0LTEuMDE0VjI5Ljg4eiBNMzMwLjkyMywzOC44NWMtNC4xMzItMC4zMTEtNy4zMy0xLjcxNS05LjgyNi0zLjgyMmMzLjgxOS0yLjY1MSw2LjIzOS0zLjk3NSw2LjIzOS04LjAzOVY2Ljc4OGwxLjE3My0wLjkzNGMwLjg1NywwLjMxLDEuNTU4LDAuNjIxLDIuNDE2LDAuOTM0djMyLjA2TDMzMC45MjMsMzguODV6IE0zNDMuMDkzLDI5LjY0M2MwLDIuMjY3LTAuMjMzLDMuODI0LTAuODU3LDUuNjk5Yy0yLjI2MiwyLjI1OC01LjYyLDMuNTg2LTkuNDM4LDMuNTg2aC0xLjA5NFYxOC44ODFjMC43MDQtMC4wNzksMS4zMjYtMC4xNTcsMS45NTEtMC4xNTdDMzM5LjI3MSwxOC43MjQsMzQzLjA5MywyMy43OTQsMzQzLjA5MywyOS42NDN6IE0zNDAuMDUsMTEuMTU3bC04LjM0Niw3LjQxVjcuMTAyQzMzNC42NjksOC4yNzIsMzM3LjMyMSw5LjY3NiwzNDAuMDUsMTEuMTU3eiBNMzc2LjA5LDM4LjQ2M2wtMC40NjcsMC4zMDlsLTYuNjI5LTQuMjEzVjE1LjkxN2w3LjAxOCwzLjQzMUwzNzYuMDksMzguNDYzTDM3Ni4wOSwzOC40NjN6IE0zNDguMzIxLDQuNDQ4bC0wLjcwNS0wLjYyNGwtMi41NywyLjczMWMwLDAtNi42MzQtMi4xODQtMTIuMDE1LTUuMzAyYy03LjQwOSw1LjYxNS0xMy4wMjUsOS41OTItMjAuMjgxLDE0Ljc0M2MtMS43MTcsMi41NzItMi42NTIsNS45MjUtMi42NTIsOS41OTRjMCw5Ljk4MSw5LjIwNCwxNy43ODIsMjAuODI1LDE3Ljc4MmM3LjU2Ny0zLjE5NSwxMi45NTEtNy42NDUsMTYuOTI4LTEzLjAyNWMwLjIzMy0xLjA5MSwwLjMxMi0yLjY1MiwwLjMxMi0zLjUwOWMwLTcuMjU2LTQuOTEzLTExLjMxLTEwLjE0MS0xMi41NThsMTAuMjk4LTkuODMyTDM0OC4zMjEsNC40NDhMMzQ4LjMyMSw0LjQ0OHogTTM4MS44NjIsMTYuNTM5bC05LjM2LTQuODMzYy0yLjg4NywyLjY0OS01LjY5Myw0LjU5OC05LjQzOCw2LjQ3YzAuMjMzLDAuNzA1LDAuNDY4LDMuNTkxLDAuNDY4LDUuMzg2djEyLjg3MWMtMC44NTcsMC45MzQtMS43MiwxLjQwNC0yLjU3NiwxLjQwNGMtMC44NTcsMC0xLjc5Mi0wLjM5MS0yLjk2My0xLjI0OFY1LjM4N2MwLTEuNzk1LDEuMDkyLTMuOTAzLDIuNDk3LTMuOTAzdi0wLjIzYy0yLjg4OSwwLTUuNDYzLDEuMzIzLTYuMjM5LDMuNTA2Yy0wLjcwNi0xLjE2OS0xLjc5NC0yLjE4NC0zLjQzNC0yLjE4NGwtMC4wNzcsMC4zMTRjMC45MzYsMCwxLjg3NCwyLjY1LDEuODc0LDUuMTQ1djI1LjA0MWMwLDIuNDItMC4zMTQsMy42NjgtMS4yNDgsNC45OTRsNi4yMzcsNC41MjNsNS44NS01LjA2OGw5LjA1LDUuNDU1YzMuNDMzLTMuMTk1LDUuNDYzLTUuMDY4LDkuMjgyLTcuMzI4Yy0wLjIzMy0xLjE3Mi0wLjMxMi0zLjQzMy0wLjMxMi00LjM3MVYyMC4yMDhjMC0xLjg3NCwwLjA3OC0yLjg4OCwwLjM5Mi0zLjY2OEwzODEuODYyLDE2LjUzOXogTTIzMy43MywzOS4wODRjLTIuMjY1LTIuMDI5LTUuMzgzLTMuNzQtMTAuMzc1LTMuNzRMMjMxLDI3LjIyOWwyLjY1MSwyLjMzOEwyMzMuNzMsMzkuMDg0TDIzMy43MywzOS4wODR6IE0yMzYuMzAzLDIwLjI4NmwtNi41NSw3LjA5NWwtMi44ODctMi4xMDR2LTkuNDM4QzIyOS44MywxNy44NjQsMjMxLjU0NCwxOC45NTgsMjM2LjMwMywyMC4yODZMMjM2LjMwMywyMC4yODZ6IE0yNjguNTE5LDM5LjIzNmwtMC4zMSwwLjIzOGwtNi4yNDEtMy44MjJWMTYuMTVsNi41NTEsMy45VjM5LjIzNnogTTI3NC42MDIsMzYuMzUyYy0wLjMwOS0xLjAwOC0wLjM4Ni0yLjAyOS0wLjM4Ni0yLjk2MVYxNy4wMDlsLTguNTA1LTQuNzZjLTIuNzI5LDIuNzI5LTUuODU0LDQuNjgxLTkuODI3LDYuODY2YzAuMjMyLDAuNzc5LDAuMzksMi4wMjcsMC4zOSwyLjg4NnYxMy44MDZjLTEuMjQ3LDEuMzI4LTIuNDk4LDIuMTA3LTMuNTg5LDIuMTA3Yy0xLjA5MiwwLTIuMTgzLTAuNDY1LTMuMzU1LTEuNzEzYzAtMS4wOTQsMC4wNzgtMTIuOTUxLDAuMDc4LTIwLjIwM2g2LjA4NHYtMS40ODRsLTYuMDg0LTAuMjMzYzAsMCwwLjA3OC01LjY5NSwwLjE1Ni02Ljg2N2gtMC43bC04LjUwNSw4Ljk3MmMtMy42NjUtMC41NDUtNi4zOTUtMS44NzItMTAuMzc1LTQuNmMtMy4xMTgsMy4xOTQtNS4yMjYsNC42NzYtOC45NjgsNi40NzFjMC4xNTQsMS44NzQsMC4yMzIsMi44ODcsMC4yMzIsNC43NmMwLDIuMTg0LDAsMi44ODQtMC4xNTYsNC43NjFsNC45OTIsMy41MDZsLTQuNjgxLDQuOTE3Yy0yLjAyNSwyLjEwNS0yLjgwNywzLjgyLTIuODA3LDUuNTM1YzAsMS41NjIsMC42MjUsMi44MDksMS41NTksMy45OGwwLjU0Ny0wLjMxMWMtMC42MjUtMC45MzgtMS4wMTctMi4wMzEtMS4wMTctMy4wNDFjMC0xLjYzOSwwLjg1OS0zLjA0MywzLjI3Ny0zLjA0M2MyLjQyLDAsNS4wNzIsMS41NTcsNy43MjQsMy42NjJjMi45NjQtMi43MjksNS4xNTEtNC41Miw4LjQyNC02LjE1NnYtNy45NmMwLTAuOTM4LDAuMDc4LTEuMzI3LDAuMzEzLTEuOTVsLTQuOTk1LTMuMzU0bDYuMzk4LTYuOTQ1aDIuOTY0YzAsNy4wOTktMC4wNzksMTYuMjI2LTAuMDc5LDE3LjI0YzAsMS4yNDgtMC4yMzQsMi44MTEtMS4wOTEsNC4wNTdsNy4wOTksNS4yMjNsNi4wODUtNS41MzdsOC44MTQsNS43NzFjMy40MzMtMy4xOTMsNi4xNjItNS4zMDEsOS45ODEtNy4wMkwyNzQuNjAyLDM2LjM1MnogTTMwMi45MjEsMzcuNDQ3bC0wLjU0My0wLjYyNWwtMi42NTcsMi4yNjJjLTEuMzI1LDAtMi4yNi0wLjkzOC0yLjI2LTIuNDE4YzAtMS4zMjQsMC4wNzktMTYuNzc0LDAuMTU1LTE5LjQyNWMtMS4wMTQtMi4wMzEtMi4zNDEtMy41ODgtNS4zMDMtNC42MDRsLTcuMTAyLDUuMjI2YzAtMi4xODMtMS4yNDYtNC4xMzMtMy42NjMtNS4zODFsLTQuMTM2LDMuNTEybDIuMTg1LDIuMzM3YzAsMC0wLjA3OCwxMy43MjgtMC4wNzgsMTUuOTg5YzAsMi4yNjgtMS42MzgsMy45MDYtMS42MzgsMy45MDZsNi40NzUsNC43NTJsMy40MzQtNC4yMDdsLTIuNTc1LTIuMzM4VjE5LjI3YzEuMjQ3LTEuNjM3LDIuNTc1LTIuMzQxLDMuNzQ3LTIuMzQxYzEuMzIzLDAsMi40MTYsMC45MzYsMi43MjgsMi4yNjVjMC4wNzgsMS4wMTMsMC4wNzgsMi42NTEsMC4wNzgsNC4zNjhjMCwyLjY1MSwwLDEyLjAwOS0wLjA3OCwxNS42NzVjMC40NjcsMS42MzksMi44ODcsMy45LDQuNDQ2LDMuOWw2Ljc4Ni01LjY5MUwzMDIuOTIxLDM3LjQ0N3ogTTE4OC43MTksMjUuODIzbC0wLjE1NywxMS4yM2MtMS4xNjgsMC42MjctMS45NDgsMS4wMTgtMy4wNDEsMS43OTVjLTAuODU3LTAuNTQzLTEuNzE0LTEuMDkyLTIuNzI5LTEuNzE1VjIyLjYyNUwxODguNzE5LDI1LjgyM3ogTTE4OS41NzgsMTYuMDcyYzAsMS43MTMtMS41NiwyLjU3NS02Ljc4Nyw1Ljg0OXYtNC45OTJjMC0yLjQ5NiwwLjE1Ni0zLjg5OSwwLjIzMy00LjkxNWgtMS4wOTFjMC4xNTYsMS4wOTIsMC4yMzQsMi40MTgsMC4yMzQsNC45MTV2MTkuODk1Yy0zLjI3Ny0xLjk1My03LjI1NS0zLjk4MS0xMS40NjktNC4yOTJjMy45NzktMi4yNjIsNy45NTgtNS4zMDQsNy45NTgtOS43NTRWMTMuMDNjMC0zLjEyMSwxLjI0OC00Ljk5NSw0LjUyNS03LjgwMWMyLjU3MywzLjgyMSwzLjU5LDUuNDU5LDUuNjE1LDguODkyQzE4OS4yNjYsMTQuOSwxODkuNTc4LDE1LjY4MSwxODkuNTc4LDE2LjA3MkwxODkuNTc4LDE2LjA3MnogTTIxMS42NTIsMzkuMDg0bC0wLjMxMSwwLjIzNGwtNi4xNjQtMy43NDZWMTUuODM3bDYuNDc1LDMuNjY2TDIxMS42NTIsMzkuMDg0TDIxMS42NTIsMzkuMDg0eiBNMTc5LjM2LDMuOTAybC0wLjE1Ni0wLjQ2OWMtMy4yNzcsMC01LjA3Mi0wLjM5Mi02Ljc4OS0wLjcwMWMtMS42MzgtMC4yMzMtMy4wNDItMC41NDctNC45OTEtMC41NDdjLTUuMTUsMC04LjUwNSwyLjY1NC04LjUwNSw2Ljk0M2MwLDEuNzk1LDAuMzksMi44MDgsMS41Niw0LjEzNWwwLjQ2OC0wLjQ2OGMtMC42MjUtMC43ODItMC45MzUtMS41Ni0wLjkzNS0yLjQyYzAtMS44NzEsMS41Ni0zLjUwOCw0Ljk5MS0zLjUwOGMyLjU3NiwwLDQuOTE1LDAuNDY4LDYuOTQzLDAuOTM2Yy00LjM2OCwzLjE5Ni03LjAyMyw1LjUzNy03LjAyMywxMi4zMjVjLTAuNjIzLTAuMjM1LTEuNDgyLTAuMzktMi42NTEtMC4zOWMtMy4yNzUsMC00Ljk5MSwyLjE4My00Ljk5MSw0LjI4OGMwLDAuOTM4LDAuMjMyLDEuOTUzLDAuODU3LDIuNjUybDAuNTQ2LTAuMzA4Yy0wLjIzNS0wLjQ3Mi0wLjM5Mi0wLjkzOS0wLjM5Mi0xLjQwNmMwLTEuNDAyLDEuMDkyLTIuNDk3LDMuMTIxLTIuNDk3YzEuNzk0LDAsMy4xMjEsMC43ODEsMy43NDMsMS44NzVjMCw0Ljc1OS0wLjkzNCw3LjE3Ny0zLjQzLDcuMTc3djAuNTQyYzMuNzQzLDAsOC4yNjctMi43MjksOC4yNjctNy4wOTd2LTguNzM3YzAtNy4xNzgsNC4yMTEtMTAuNTMsOS4zNjEtMTIuMzI1SDE3OS4zNnogTTE5NS42NjIsMjMuNjM4bC02Ljk0My00LjYwMmMyLjY1Mi0xLjYzOSwzLjUxMS0yLjEwOCw0LjQ0Ni0yLjgwOGMxLjY0LTEuMTcxLDIuMTA4LTEuODc0LDIuMTA4LTIuNTc1YzAtMC41NDctMC4yMzUtMS41NjEtMS40ODEtMy40MzJjLTEuNTYxLTIuMzQxLTMuMDQyLTQuNjAzLTYuMTYzLTguOTY5Yy00LjM2OCwyLjk2NC02Ljc4Niw0Ljc1NC0xMS4zODgsOC4zNDZjLTEuODczLDEuNDgtMy4yNzcsMy44MjEtMy4yNzcsNi43ODVjMCwxLjAxNCwwLjA3OSw2LjI0MSwwLjA3OSw5LjY3NGMwLDIuNjUxLTAuNDY5LDQuMDU4LTMuMjc3LDYuMzk1Yy02Ljc4NSwwLTEwLjg0Myw0LjM3My0xMC44NDMsOC43MzhjMCwxLjg3NSwwLjYyNSwzLjgyNCwyLjAyOCw1LjM4MWwwLjQ2OS0wLjQ2N2MtMC44NTktMC45MzktMS41NTktMi40MTgtMS41NTktNC4xMzNjMC0yLjM0NCwxLjcxNi00LjkxOCw3LjA5OC00LjkxOGM1LjkyOSwwLDExLjQ2NSw0LjA2MSwxNC42NjQsNi4wMWM0LjYwMy0zLjkwMiw3LjQ5LTUuNTQxLDEzLjQxNy03LjQ5MnYtOS45MDZjMC0wLjcsMC4yMzQtMS40MDMsMC42MjUtMi4wMjdMMTk1LjY2MiwyMy42Mzh6IE0yMTcuOTcyLDE2Ljg1MmwtOC45Ny00LjkxNWMtMi43MzIsMi43MzItNi4yNCw0LjkxNS0xMC4yMTgsNy4xYzAuNTQzLDEuNjM4LDAuMzg4LDMuNzQxLDAuMzg4LDYuMzk1YzAsNi40NzYsMC4wNzcsOS45ODctMS4wOTIsMTEuNzAybDkuOTA2LDYuMDg2YzIuNzMtMi44MTEsNS42OTQtNC45OTIsOS42NzUtNy4xNzhjLTAuMzEyLTEuMDE0LTAuMzkyLTIuMDI3LTAuMzkyLTIuOTY1VjIyQzIxNy4yNywxOC43MjUsMjE3LjU4MywxNy41NTYsMjE3Ljk3MiwxNi44NTJMMjE3Ljk3MiwxNi44NTJ6IE04Ny4wNzgsMjkuMDIyYzAsMi4zNC0wLjM5MSwzLjc0NC0xLjYzOSw0LjgzNWMtMi44ODUtMi45NjQtNC40NDYtNy4xNzctNC40NDYtMTEuOTM2YzAtMi42NTIsMC40NjktNC42NzgsMS40MDMtNi4wODRjMS41NjEtMS40MDUsMy40MzQtMi43MzEsNC42ODEtMy40MzNWMjkuMDIyeiBNOTUuOTcxLDM4Ljg0OGMtMy44OTktMC40NjktNy4yNTUtMS45NDktOS43NTItNC4yMDljNC44MzctMy41MSw1LjkyOC01LjU0MSw1LjkyOC05LjQ0MVY5LjM2MmwwLjE1NS0wLjE1NmMxLjU2MSwwLjE1NiwyLjQyMSwwLjIzMywzLjY2OSwwLjMxMlYzOC44NDhMOTUuOTcxLDM4Ljg0OHogTTE0Mi43NzMsMjIuMjM0bC02LjMxNyw1LjA2OXYtMTAuOTJsMC4yMzMtMC4yMzNMMTQyLjc3MywyMi4yMzR6IE0xNDcuNjg4LDM0Ljc5M2wtMC40NjgtMC40NzFjLTIuNDk3LDIuNjU2LTMuNTg3LDMuMzU3LTUuNDYsMy4zNTdjLTEuNDAzLDAtMy4wNDEtMC44NTctNS4zMDMtMi45Njd2LTYuMzk0bDExLjIzMi04LjU4bC03LjY0NC03LjU2OGMtMy4zNTUsMi42NS0zLjksMy4xMi02LjMxOSw0Ljk5M2MtMS4zMjYsMS4wMTEtMi4xMDUsMS40ODItMi45NjQsMS44NzNjMC4xNTcsMC45MzQsMC4zMTEsMi4yNjEsMC4zMTEsMy4xOTd2MTQuMjc0Yy0xLjMyNCwxLjI0Ni0yLjU3NCwxLjc5NS0zLjUwOCwxLjc5NWMtMS4yNSwwLTIuMTg1LTAuNzgxLTIuMTg1LTIuMTA1VjE3LjA4NWMtMC43NzktMi40MTctMi4yNjEtMy45OC01LjE0Ny00Ljk5MmwtNy4xMDEsNS43NzFWNC40NDdjMC0xLjk0OCwxLjA5NC0zLjc0NCwyLjEwNy00LjIxMVYwYy0yLjg4NiwwLTQuOTE0LDEuODc1LTUuNzcyLDQuMDZsLTEuMjQ4LTIuNTc3bC0wLjQ2OSwwLjA3OXYzNC4zMjNjLTIuODA5LDEuNDgyLTUuODUsMy4xMjEtOS4yMDUsMy4xMjFjLTAuNjIyLDAtMS4xNywwLTEuNzk1LTAuMDc4VjkuNTk5YzEuNDgyLDAuMTU0LDIuNDIsMC4yMzIsMy4yNzgsMC4yMzJjMS4zMjQsMCwyLjE4NC0wLjIzMiwyLjgwOC0wLjU0NWwzLjgyNC03LjgwMWwtMC42MjYtMC4xNTVjLTEuNDgxLDIuOTY0LTIuMjYsMy40MzEtNS40NTksMy40MzFjLTEuNDgyLDAtNC43NTgtMC4zODktOC4wMzYtMC43NzhjLTMuMTItMC4zOTEtNi4zMTgtMC43OC03Ljk1NS0wLjc4Yy00LjgzNywwLTcuNjQ1LDMuMzU0LTcuNjQ1LDYuNzg4YzAsMS40MDIsMC40NjYsMi44MDgsMS40MDQsNC4wNTZsMC41NDQtMC4zOWMtMC42MjMtMC43OC0xLjAxMy0xLjc5Ni0xLjAxMy0yLjY1NWMwLTEuNDAxLDEuMDkxLTIuNjQ5LDQuMDU3LTIuNjQ5YzEuMTcxLDAsNS4zMDUsMC4zOTIsOS4yMDQsMC43Yy00LjQ0NiwyLjE4Ni04LjExLDQuNTI1LTEyLjQwMSw3LjgwMmMtMS44NzMsMi40OTYtMi44MSw1LjY5My0yLjgxLDguOTcyYzAsOC40MjMsNi4zOTcsMTcuNTQ4LDIwLjUxOCwxNy41NDhjNC4xMzMtMi4zNCwxMC4yMTgtNS44NDgsMTAuMjE4LTUuODQ4bDUuNjE2LDUuMDdsMy45LTMuODI0bC0zLjA0Mi0zLjE5OVYxOS4yNzFjMS4zMjYtMS43OTMsMi44MDgtMi41NzQsMy45OC0yLjU3NGMxLjMyNSwwLDIuNTczLDAuOTM3LDIuODg2LDIuNjUydjE5LjU3OWMwLjQ2NywxLjY0MSwyLjQxNywzLjE5NSw0LjM2OCwzLjc0Mmw2Ljk0Mi01LjIyM2w4LjAzNiw1LjUzM2w4LjM0NS04LjE4NkwxNDcuNjg4LDM0Ljc5M3oiLz48L3N2Zz4=" alt="Boston Globe Logo">
+	</header>
+	<main>
+		<article>
+			<h2>Tewksbury mother killed in Las Vegas massacre</h2>
+			<small>By <a href="mailto:mlevenson@globe.com" rel="author">Michael Levenson</a><time datetime="2017-10-02">October 02, 2017</time></small>
+			<figure>
+				<img src="img/first.webp" alt="Rhonda LeRocque.">
+				<figcaption>Rhonda LeRocque.</figcaption>
+			</figure>
+			<p>LOWELL — A Tewksbury mother who was active in her church and worked for a Cambridge design firm was killed Sunday in the massacre at the country music festival in Las Vegas, grieving family members said Monday.</p>
+			<p>Rhonda LeRocque was at the outdoor concert with her husband, Jason, and their young daughter when a gunman opened fire, killing her and at least 58 others, according to her sister, Jennifer Zelenski. The husband and daughter escaped unharmed, Zelenski said.</p>
+			<p>Rhonda LeRocque’s grandmother, Carol Marquis, said Jason LeRocque’s father had bought the family tickets for the concert. </p>
+			<p>“All I know is someone started shooting and people are running and she got shot in the head,” Marquis said Monday. “And we lost a dear, close, good person — one of the nicest people you will ever meet in your life.”</p>
+			<p>Zelenski said LeRocque and her husband were devout Jehovah’s Witnesses and involved in many of the church’s community service activities. Rhonda LeRocque also worked for the design firm IDEO in Cambridge, where one employee recalled her as the beloved “den mother” of the office who often brought homemade baked goods for her colleagues. </p>
+			<p>“She’s perfect,” Zelenski said, recalling her sister through tears. “Her husband and daughter are the picture-perfect family. They’re just the best. Rhonda would do everything to be the best mom and the best wife she could be.”</p>
+			<p>Marquis said Rhonda and Jason LeRocque met about 20 years ago through their local Kingdom Hall, the Jehovah’s Witnesses’ house of worship. Marquis said she had encouraged her granddaughter to join the church when Rhonda was a struggling young woman. </p>
+			<p>“I said, ‘Well, look I can help you, but you’ve got to abide by my rules and you can come with me, but you have to go to Bible study every week and have to go to meetings with me.’ And that’s what she did,” Marquis said.</p>
+			<p>Zelenski said Jason and Rhonda LeRocque became respected members of the church.</p>
+			<p> “They always were very helpful and I want to say mentors in a type of way — great people to talk, if you ever needed to talk and listen,” Zelenski said. </p>
+			<p>As part of the church’s charitable activities, Rhonda and Jason LeRocque helped rebuild homes in Louisiana after Hurricane Katrina and in other places affected by natural disasters, Marquis said.
+			</p>
+			<p>Rhonda LeRocque had worked at IDEO for a decade, according to her LinkedIn page. Before that, she managed her own cleaning and organizational business. </p>
+			<p>Marquis said she last spoke to her granddaughter a few days ago. She was looking forward to the musical festival, Marquis said. </p>
+			<p>“She’s always saying, ‘I love you, Gram,’” Marquis said. “That was her famous last words: I love you, Gram. And I told her, ‘Have a good time.’ ” </p>
+			<p>At a relative’s house in Lowell, a family member said LeRocque had led a “picture perfect” life. </p>
+			<p>“I don’t remember one flaw,” she said between tears. “I swear to God, not one, because if there was one, I would tell you.” </p>
+			<p>LeRocque would often host cookouts and was close to all the children in the family. </p>
+			<p>“She did so much,” she said. </p>
+			<p>At least 59 people were killed and more than 500 people were injured after the gunman, identified by police as 64-year-old Stephen Craig Paddock of Nevada, rained heavy fire down on a crowd of more than 22,000 as country singer Jason Aldean was performing. </p>
+			<p>Michael Kuenzler, a retired Lowell police officer who runs a restaurant and golf course in Dracut, said he and his wife were staying seven floors below the shooter at the Mandalay Bay hotel.</p>
+			<p>Kuenzler, who was in town for a wedding conference, said he heard sirens and looked out the window to see a wave of law enforcement officers descending on the strip. </p>
+			<p>“I’ve never seen so many police cars and emergency vehicles,” Kuenzler said. </p>
+			<p>He said SWAT officers later checked their room during their sweep of the hotel and told the couple to stay where they were. </p>
+			<p>The experience showed him “how hopeless people feel when these things are happening. There’s nothing you can do to combat it. Nobody knows what’s next .&nbsp;.&nbsp;. it’s a pretty helpless feeling, to be honest with you.” </p>
+		</article>
+		<article>
+			<h2>Las Vegas concertgoers on friend also in attendance: ‘We don’t know if he got out or not’</h2>
+			<small>By <a href="http://www.bostonglobe.com/staff/rocheleaum" rel="author">Matt Rocheleau</a><time datetime="2017-10-03">October 03, 2017</time></small>
+			<figure>
+				<img src="img/second.webp" alt="The Mandalay Bay in Las Vegas.">
+				<figcaption>The Mandalay Bay in Las Vegas.</figcaption>
+			</figure>
+			<p>LAS VEGAS — Jake Velzl and his wife were standing in the tightly packed crowd when the shooting started. As people ran screaming, they dove to the ground. Looking back, they saw someone get shot, standing right where they had been. </p>
+			<p>“When we left, the person that took our spot got hit,” Velzl recalled on Monday, the day after the massacre that left at least 59 people dead and more than 500 injured. “It sounded like at first fireworks, and once you realized it wasn’t that, we had to get everybody down. Then we got up and ran and hid if we could. And that’s what we did to get out of there.” </p>
+
+			<p>The couple came from Orange County, Calf., to see the outdoor music festival, which they had attended two years ago. As of mid-afternoon, they had not heard from a friend who went to the concert but was not standing near them when the gunman opened fire. </p>
+			<p>“We don’t know if he got out or not,” he said. </p>
+
+			<p>He stared into the distance as he spoke, struggling to describe his emotions. </p>
+
+			<p>“I don’t really feel,” he said, his voice trailing off. “It feels kind of numb. We’re just trying to figure out how to get through it, I guess.”</p>
+			<p>Up and down the Vegas strip, electronic billboards that normally advertise entertainment and nightlife offerings flashed requests for blood donations and a number to call for those looking for missing loved ones. Some included messages such as “Our prayers for the victims. Our gratitude for the brave first responders.”</p>
+
+			<p>They included Toni Mullan, a clinical supervisor in trauma resuscitation at University Medical Center of Southern Nevada, the state’s only Level 1 trauma center. Mullan said she got a call from a nurse she works with around 10 Sunday night.</p>
+			<p>“Mass casualty,” the nurse said. “I need you.” </p>
+			<p>Mullan hung up and jumped in her car. She raced to the hospital, running through red lights at high speed while calling other nurses to see if they could come in to help.</p>
+			<p>When she pulled into the hospital parking lot, her car was overheated. Inside, it was chaos. </p>
+			<p>“Beds were full and people were still coming in,” she said. But the staff was prepared and able to handle the rush of people needing treatment, she and other hospital officials said. </p>
+			<p>“This was the proudest moment I’ve had to be a nurse,” said Mullan, who has lived in the Las Vegas area for 10 years and is originally from Detroit. </p>
+			<p>Hospital officials said the hospital treated more than 100 people. Four died, and 12 remained in critical condition. </p>
+			<p>Ty Stanley, 37, from Baton Rouge, La., was in town for a work conference and stayed on the same floor of the Mandalay Bay hotel as the suspected gunman. He was in his room when the shooting broke out, but because of the large size and configuration of the building, he couldn’t hear it. </p>
+			<p>“I could hear commotion in the hallway and then the SWAT team came in the room and cleared it and brought me down,” Stanley said. He and other guests were brought to a theater inside the hotel, where they stayed for about three hours. </p>
+			<p>From his room several floors below the shooter’s, Ken Stringer heard the gunshots. </p>
+			<p>“I heard it all start to finish,” said Stringer, 45, also from Louisiana. “You could hear it well enough to understand there were multiple calibers in use.”</p>
+			<p>From his window, Stringer said he could see the crowd scatter, although he couldn’t see where the shots were coming from. </p>
+			<p>“It was like you stepped on an ant pile,” he said. </p>
+			<p>Local officials praised the public for generously donating water, food, and blood. </p>
+			<p>“I want to know why America doesn’t always stand together like this,” said Keith Hanoff, a police officer who responded to the shooting. “It is beautiful though.” </p>
+			<p>“I’ve seen people I’ve arrested before coming out here to donate food and water,” he added.</p>
+			<p>The hospital’s chief executive, Mason Van Houweling, said “it was inspirational how the community responded after this event.”</p>
+			<p>Brandon Jensen, 27, was among those dropping off food and other supplies at the medical center Monday. He said he felt obliged to help.</p>
+			<p>“This hit close to home,” he said. “I’m happy to see a lot of people down here helping out.”</p>
+			<p>Jensen said one of his friend’s relatives had been killed in the attack. Another friend’s fiancee was in critical condition.</p>
+			<p>“That’s what shook me,” he said. “I couldn’t sleep all night.”</p>
+		</article>
+		<article>
+			<h2>Gunman had fully automatic weapons</h2>
+			<small>By <a href="https://www.nytimes.com" rel="author">Thomas Gibbons-Neff</a><time datetime="2017-10-02">October 02, 2017</time></small>
+			<figure>
+				<img src="img/third.webp" alt="The Guns & Guitars store in Mesquite, Nev., where Stephen Craig Paddock reportedly bought weapons.">
+				<figcaption>The Guns & Guitars store in Mesquite, Nev., where Stephen Craig Paddock reportedly bought weapons.</figcaption>
+			</figure>
+			<p>NEW YORK — From his hotel room on the 32nd floor of the Mandalay Bay Resort and Casino in Las Vegas, Stephen Paddock would have looked down upon a crowd of more than 20,000 people, surging to the final sets of a country music festival.</p>
+			<p>He opened fire late Sunday, killing at least 59 people and injuring 527 others in one of the deadliest mass shootings in US history, authorities said.</p>
+
+			<p>But what may have seemed like a difficult feat, firing across an urban area and into a crowd from about 500 yards away — the equivalent of several football fields — appears to have been offset by Paddock’s preparations, which made it possible for him to inflict mass carnage.</p>
+			<p>Law enforcement officials cautioned that their information remained preliminary amid a rapidly unfolding investigation, and it was at times contradictory. But officials said Paddock established firing positions by smashing a pair of windows in his hotel room. He was armed with at least 17 firearms, authorities said, including rifles designed to be fired at such distances. He was also perched from a vantage point that increased the likelihood that even errant shots were more likely to strike someone than had he fired them from ground level.</p>
+
+			<p>Among his weapons, a law enforcement official said, were AR-15-style rifles, a civilian variant of a standard service rifle used by the US military for more than a half-century.</p>
+			<aside class="bg-related bg-related--wide">
+				<a href="/news/nation/2017/10/02/nevada-gun-regulations-are-relatively-loose/zWEg1pqPiXky2ueWuMSjKP/story.html?p1=Article_Related_Box_Article" title="view story">
+					<img src="img/aside.webp" alt="Attack may have been first mass shooting with automatic weapon">
+					<h4>Attack may have been first mass shooting with automatic weapon</h4>
+					<p>The state of Nevada, where a gunman shot at least 50 people at a Las Vegas concert Sunday night, has relatively loose gun regulations.</p>
+				</a>
+			</aside>
+
+			<p>The possibility that Paddock used tripods, which two law enforcement officials said were in the room, indicates that he understood how to overcome some of the difficulties of his plan. Special mounts designed to fit the underside of a rifle and sit atop camera tripods allow the gunman to fire more accurately while standing.
+			</p>
+			<p>These preparations, along with the downward angle of Paddock’s gunfire and the density of concertgoers, would make the shooting more lethal than it might otherwise have been, and more difficult to counter or escape.</p>
+
+			<p>When the gunshots started, videos showed, those in front of the stage dropped to their stomachs — often an adequate first measure when under fire. But on Sunday night, the decision potentially put them at greater risk.</p>
+			<p>Paddock’s position overhead gave him a vantage point over objects and obstacles that would typically protect people from bullets flying from a gunman at ground level. It also meant that inaccurate shots — the sort common to rapid or hurried fire, which typically sail high or strike the ground short — could still plunge into areas where people were huddled.</p>
+			<p>Audio recordings of the shooting suggest that at least one of Paddock’s weapons fired automatically, discharging multiple bullets with a single depression of a trigger, in what are commonly called bursts.</p>
+			<p>Weapons capable of burst fire have long been federally regulated in the United States and are more difficult to obtain than weapons that fire semi-automatically, for which regulations vary by state. Two of the guns Paddock had with him were modified to make them fully automatic, according to two US officials who spoke to the Associated Press on the condition of anonymity.</p>
+			<p>Paddock had purchased some guns in Arizona, according to a gun seller there who spoke with authorities.</p>
+			<p>Several pounds of a nonflammable exploding target used for practice were recovered from Paddock’s home in Mesquite, about an hour outside Las Vegas, said Sheriff Joseph Lombardo of Clark County.
+			</p>
+			<p>The length of the bursts indicate that Paddock had magazines capable of holding scores of rounds, allowing him to fire longer without reloading.</p>
+			<p>Nevada, unlike some states, has no laws limiting ammunition magazine capacities, meaning the shooter could have purchased equipment locally that could hold scores of rounds, allowing him to fire longer without reloading.</p>
+			<p>Ownership of automatic guns is legal, so long as they were made before May 1986 and are registered with the federal government.</p>
+			<p>If an automatic weapon, also called a machine gun, was made or imported after 1986, it may be legally owned only by licensed dealers, police, and the military.</p>
+			<p>Semiautomatic guns, which fire only once for each trigger pull, may not be legally modified to automatic.
+			</p>
+			<i>Material from the Washington Post was included in this report.</i>
+		</article>
+	</main>
+</body>
+
+</html>

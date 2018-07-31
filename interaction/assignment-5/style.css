@@ -1,0 +1,388 @@
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,700i|Playfair+Display:700');
+
+/* general styling */
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+}
+
+p {
+	line-height: 1.5em;
+	margin: .5em 0;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+figure {
+	margin: 1rem;
+}
+
+figcaption {
+	line-height: 1.3em;
+	text-align: right;
+}
+
+img {
+	width: 100%;
+	max-height: 300px;
+	object-fit: cover;
+	object-position: center;
+}
+
+
+/* layout */
+
+body>header {
+	position: relative;
+	color: white;
+	background: rgb(18, 120, 189);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, .4);
+	overflow-y: hidden;
+}
+
+body>header h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 5rem;
+	text-align: center;
+	color: rgba(18, 120, 189, 1);
+	text-shadow: 0 0 2em rgba(255, 255, 255, .6);
+	text-transform: lowercase;
+	letter-spacing: .15em;
+	background: url('img/cover.jpg');
+	background-position: center center;
+	background-size: cover;
+	padding: 1em .5rem 1.5em;
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 2;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+	height: 4rem;
+	background: rgba(18, 120, 189, .5);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, .4);
+}
+
+.fixed nav {
+	background: rgb(18, 120, 189);
+}
+
+nav img {
+	height: 2rem;
+	width: auto;
+	padding: 1rem;
+}
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#toggler {
+	position: relative;
+	z-index: 10;
+	color: white;
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 1rem;
+}
+
+#toggler:after {
+	content: 'menu';
+}
+
+.menu-open #toggler {
+	position: fixed;
+	top: 0rem;
+	right: 0rem;
+}
+
+.menu-open #toggler:after {
+	content: 'close';
+	color: black;
+}
+
+.categories {
+	display: flex;
+	position: fixed;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	z-index: 5;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	transition: bottom .3s ease-in;
+}
+
+.menu-open .categories {
+	bottom: 0;
+}
+
+.categories span {
+	display: block;
+	color: #A15500;
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+.pages {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	justify-content: space-around;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+	transition: transform .5s;
+	padding: .5rem;
+	color: black;
+	align-items: center;
+}
+
+.pages a {
+	font-size: 2rem;
+}
+
+.scroll-down .pages {
+	transform: translateY(100%);
+}
+
+article>header {
+	padding: 3rem 1rem;
+}
+
+article>header h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 9vw;
+	text-transform: uppercase;
+	position: relative;
+	padding: .5rem;
+	white-space: nowrap;
+}
+
+article>header h1:first-letter {
+	float: left;
+	font-size: 260%;
+	margin: -.25em .5rem 0 0;
+	color: #A15500;
+	line-height: 1;
+}
+
+article>header p {
+	font-weight: 400;
+	font-size: 1.2rem;
+	font-style: italic;
+	clear: both;
+}
+
+article>header a {
+	font-size: .9rem;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	font-weight: 400;
+}
+
+section {
+	padding: 1rem;
+}
+
+section>header h1 {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+section>header span {
+	color: #A15500;
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+section p:first-of-type {
+	font-weight: 700;
+}
+
+section figure {
+	margin: 0rem;
+}
+
+section figure+header,
+section p+figure {
+	margin-top: 1rem;
+}
+
+aside {
+	background-color: #91C0E1;
+	margin: 1em;
+	padding: 1em;
+}
+
+aside h1 {
+	font-family: 'Prata', serif;
+	margin: 0;
+}
+
+footer {
+	padding: 1rem;
+}
+
+
+/* bigger screen optimalization */
+
+@media screen and (min-width: 650px) {
+	nav {
+		justify-content: space-around;
+	}
+	#toggler {
+		display: none;
+	}
+	.categories {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		position: relative;
+		background-color: transparent;
+		line-height: 1.5em;
+	}
+	.categories a {
+		color: white;
+	}
+	.categories span {
+		color: #EEAA35;
+		font-size: 1em;
+	}
+	article {
+		display: grid;
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 50% 50%;
+	}
+	article>header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	article>header h1 {
+		width: 135%;
+		font-size: 6vw;
+		z-index: 2;
+		position: relative;
+	}
+	article>header h1::before {
+		content: '';
+		position: absolute;
+		background: white;
+		width: 71%;
+		height: 100%;
+		z-index: -1;
+	}
+	article>figure:first-of-type {
+		margin: 0 0 1rem 1rem !important;
+	}
+	article>figure:nth-of-type(2) {
+		grid-row-start: 4;
+	}
+	article>figure:nth-of-type(2) img {
+		max-height: 300px;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+	}
+	section figure {
+		flex: 1;
+	}
+	img {
+		height: 100%;
+		max-height: none;
+	}
+	figure {
+		position: relative;
+	}
+	figcaption {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding: .5em;
+		color: white;
+		font-weight: 700;
+		text-shadow: 0 0 .5em black;
+	}
+	footer {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.categories span {
+		display: inline;
+		margin-right: .4em;
+	}
+	body>header h1 {
+		font-size: 8vw;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	main,
+	footer {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	article {
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 25% 25% 25% 25%;
+	}
+	article>header {
+		grid-area: 1 / 1 / 2 / 3;
+	}
+	article>figure:nth-of-type(1) {
+		grid-area: 1 / 3 / 2 / end;
+	}
+	article>figure:nth-of-type(2) {
+		grid-area: 3 / 1 / 4 / 3;
+	}
+	aside {
+		grid-area: 4 / 1 / end / 3;
+	}
+	section:nth-of-type(3),
+	article>section:nth-of-type(4) {
+		grid-row-start: 2;
+		grid-row-end: end;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	body>header h1 {
+		font-size: 103px;
+	}
+	article>header h1 {
+		font-size: 77px;
+	}
+}

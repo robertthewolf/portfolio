@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+		<!-- SEO -->
+	<meta name="keywords" content="frontend,front-end,developer,coder,designer,creative,webdesign,portfolio">
+	<meta name="robots" content="all">
+	<meta name="description" content="Creative district of Aarhus K. A place for Community, Kreativity, and Culture.">
+	<meta name="author" content="Robert Wolf, Sheereen Zangana, Desireé Zambelli, Kasia Zielińska, Stefani M. Yotova, Tereza Troxy Vajsová">
+
+	<!-- twitter -->
+	<meta name="twitter:url" content="http://robertwolf.cz/x/">
+	<meta name="twitter:title" content="Aarhus K">
+	<meta name="twitter:description" content="Creative district of Aarhus K. A place for Community, Kreativity, and Culture.">
+	<meta name="twitter:image" content="http://robertwolf.cz/x/img/share.jpg">
+
+	<!-- facebook -->
+	<meta property="og:url" content="http://robertwolf.cz/x/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Aarhus K" />
+	<meta property="og:site_name" content="Robert Wolf / Portfolio" />
+	<meta property="og:description" content="Creative district of Aarhus K. A place for Community, Kreativity, and Culture." />
+	<meta property="og:image" content="http://robertwolf.cz/x/img/share.jpg" />
+	<meta property="og:image:width" content="640" />
+	<meta property="og:image:height" content="360" />
+
+	<!-- hero -->
+	<link rel="image_src" type="image/jpeg" href="http://robertwolf.cz/x/img/share.jpg">
+
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="img/icon.png">
+
+	<title>Aarhus K - Kreativitet, Kollektivitet, Kreation</title>
+
+	<!-- Reset css -->
+	<link href="css/reset.css" rel="stylesheet">
+
+	<!-- Custom styles -->
+	<link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<nav class="black">
+			<a href="index.html">Aarhus K</a>
+			<a href="story.html">The Story</a>
+			<a href="projects.html">The Projects</a>
+			<a href="get-in-touch.html">Get In Touch</a>
+		</nav>
+	</header>
+	<main class="intro">
+
+
+
+		<h1>Aarhus K<span id="changeText"></span></h1>
+		<p class="small">Start by reading <a href="story.html">our story</a>, then discover some of our <a href="projects.html">projects</a>, and if you feel inspired, come and <a href="get-in-touch.html">join us!</a></p>
+
+
+	</main>
+
+
+	<script>
+		// text animation
+
+		var container = document.getElementById('changeText'); // id of animated element
+
+		var things = ['ultur', 'reativitet', 'ommunikation', 'ollektivitet', 'ammeratskab', 'valitet', 'reation', 'unst', 'nudepunkt', 'erneværdier']; // list of words
+		var t = -1; // first word - 1 
+		var thing = '';
+		var message = container.innerHTML;
+		var mode = 'write'; // typing mode
+		var delay = 1000; // default delay
+
+		function updateText(txt) {
+			container.innerHTML = txt;
+		}
+
+		function tick() {
+
+			if (container.innerHTML.length == 0) { // when the word is fully deleted
+				t++; // move to next one
+				thing = things[t];
+				message = ''; // reset message
+				mode = 'write'; //switch to writing
+			}
+
+			switch (mode) {
+				//writing
+
+				case 'write':
+					message += thing.slice(0, 1);
+					thing = thing.substr(1);
+
+					updateText(message);
+
+					if (thing.length === 0 && t === (things.length - 1)) { 
+						window.clearTimeout(timeout);
+						return;
+					}
+
+					if (thing.length == 0) {// when the word is fully written
+						mode = 'delete';
+						delay = 1500;
+					} else {
+						delay = 32 + Math.round(Math.random() * 40); // random delay between letters
+					}
+
+					break;
+
+					//deleting
+
+				case 'delete':
+					message = message.slice(0, -1);
+					updateText(message);
+
+					if (message.length == 0) { // when the word is fully deleted
+						mode = 'write';
+						delay = 1500;
+					} else {
+						delay = 32 + Math.round(Math.random() * 100); // random delay between letters
+					}
+					break;
+			}
+
+			// loop the words
+
+			if (t == things.length - 1) {
+				t = -1;
+			}
+
+
+			timeout = window.setTimeout(tick, delay);
+		}
+
+		var timeout = window.setTimeout(tick, delay);
+	</script>
+
+</body>
+    
+
+    
+    
+</html>
+
+
+

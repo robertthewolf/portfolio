@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Creative district of Aarhus K. A place for Community, Kreativity, and Culture.">
+	<meta name="author" content="Robert Wolf, Sheereen Zangana, Desireé Zambelli, Kasia Zielińska, Stefani M. Yotova, Tereza Troxy Vajsová">
+	<link rel="icon" type="image/png" href="img/icon.png">
+	<title>Aarhus K - The Story</title>
+
+	<!-- Reset css -->
+	<link href="css/reset.css" rel="stylesheet">
+
+	<!-- Custom styles -->
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<a href="index.html">Aarhus K</a>
+			<a href="story.html">The Story</a>
+			<a href="projects.html">The Projects</a>
+			<a href="get-in-touch.html">Get In Touch</a>
+		</nav>
+	</header>
+	<main class="story">
+
+
+
+		<div class="slide">
+			<h1>What is Aarhus K?</h1>
+			<a id="next"></a>
+		</div>
+
+
+		<div class="slide">
+			<p>Aarhus K is a district of Aarhus dedicated to urban experiments.</p>
+		</div>
+
+
+		<div class="slide">
+			<p>A place where the community collectively curates the development of the area. </p>
+		</div>
+
+		<div class="slide">
+			<p>In 2009, Institut for (X) began transforming the former railway area into an organic city.</p>
+		</div>
+
+		<div class="slide">
+			<p>The vision is to facilitate and enhance cultural activities, combining artistic creativity with business, public debate and public education.</p>
+		</div>
+
+		<div class="slide">
+			<p>The mission is the best possible neighborhood for all. Your ideas are welcome here! </p>
+
+			<div><a href="projects.html">The Projects</a><a href="get-in-touch.html">Get In Touch</a></div>
+
+		</div>
+
+
+	</main>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Custom js -->
+	<script>
+		$(document).ready(function() {
+
+			//next button
+
+			$('#next').click(function() {
+				$('html, body').animate({
+					scrollTop: $('.slide:nth-of-type(2)').offset().top * 1.2
+				}, 1000);
+			});
+
+
+		});
+
+	</script>
+
+</body>
+
+</html>

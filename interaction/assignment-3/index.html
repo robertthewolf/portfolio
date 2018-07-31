@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Assignment 3</title>
+	<link href="style.css" rel="stylesheet">
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+	<!-- loader -->
+	
+	<div class="loader">
+	<p>A long time ago in a galaxy far, far away.</p>
+	</div>
+	
+	
+	<!-- navigation -->
+
+	<header>
+		<nav>
+			<div class="perspective on">
+			</div>
+			<div class="control pause">
+				<span class="left"></span><span class="right"></span>
+			</div>
+		</nav>
+	</header>
+
+	<!-- main -->
+
+	<main class="on">
+		
+		
+	<!-- content -->
+
+		<article>
+			<h1>Assignment 3</h1>
+			<section>
+				<h2>Chapter 14<em>Enhancements and Effects with CSS</em></h2>
+				<ol>
+					<li>Done!</li>
+					<li>Graceful degradation is a web development technique, where the performance is optimized for the newest browsers, but comprimised for older ones.</li>
+					<li>Progressive enhancement works the other way around. It starts by making sure that all the important features are available for all browsers in use, and than adds a little extra for the modern ones.</li>
+					<li>Graceful degradation is faster to use and works great in modern browsers, however, it lacks some of its functionalities when it comes to older machines.</li>
+					<li>Polyfills are JavaScript plug-ins, that make some of the new html5 and css3 features available for older browsers that don't support these functionalities. For example Web Storage API, Modernizer...</li>
+					<li>Vendor prefixes are typicaly used while implementing modern css3 tags, that haven't been established as a standard yet. Therefore, they need to be specified for different browsers. As an example we can mention -webkit- or -moz-o-.</li>
+					<li>Modernizer helps us improve the user's experience in older browsers by runing a series of test while the webpage loads.</li>
+					<li>CSS3 playgound:
+						<div class="falcon">Millenium Falcon</div>
+					</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Chapter 13<em>Video, Audio and Other Multimedia</em></h2>
+				<ol>
+					<li>Done!</li>
+					<li>Done!</li>
+					<li>They are easy to implement and reliable, however, the selection of google fonts is not very wide.</li>
+				</ol>
+			</section>
+			<section>
+				<h2>Chapter 17<em>Video, Audio and Other Multimedia</em></h2>
+
+				<ol>
+					<li>Done! Click the 'jump' button below in order play the video!</li>
+					<li>Done! Music is playing in the background, controls in the top-right corner!</li>
+					<li>I've decided to use other displaying methods to express my idea more precisely, but I promise that I will use flexbox another time!</li>
+				</ol>
+				<button class="jump">Jump into hyperspace!</button>
+			</section>
+		</article>
+
+	</main>
+
+
+
+	<!-- audio -->
+	<audio id="audio" autoplay>
+  <source src="media/tune.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+	<!-- video -->
+	<video src="media/hyperspace.mp4"></video>
+
+	<!-- goodbye -->
+	
+	<div class="goodbye">
+	<p>Traveling through hyperspace isn't like dusting crops, boy! Without precise calculations we could fly right through a star or bounce too close to a supernova and that'd end your trip real quick, wouldn't it?</p>
+				<button class="back">Take me back, please!</button>
+	</div>
+</body>
+	
+</html>
